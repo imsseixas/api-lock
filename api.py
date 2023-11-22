@@ -35,7 +35,7 @@ def obter_dados():
     except mysql.connector.Error as e:
         print(f"Erro ao executar a consulta SQL: {e}")
         # Aqui você pode lidar com o erro de acordo com sua lógica de aplicação
-        return jsonify({'error': 'Erro ao obter dados do banco de dados'})
+        return jsonify({'error': f'Erro ao obter dados do banco de dados: {str(e)}'})
 
 if __name__ == '__main__':
     app.run(debug=True)
